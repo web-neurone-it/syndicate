@@ -1,4 +1,4 @@
-import React, {useRef} from 'react';
+import { useRef } from "react";
 import Layout from "./hoc/Layout/Layout";
 import Header from "./components/Header/Header";
 import Intro from "./components/Intro/Intro";
@@ -11,22 +11,22 @@ import Space from "./components/Space/Space";
 import Action from "./components/Action/Action";
 import Modals from "./components/Modals/Modals";
 import UINotification from "./UIKit/UINotification";
-import Object from './components/Object/Object';
+import Object from "./components/Object/Object";
 
 const App = () => {
-    const IntroRef = useRef<any>(null)
-    const ContactsRef = useRef<any>(null)
-    const ServicesRef = useRef<any>(null)
-    const PortfolioRef = useRef<any>(null)
-    const InformationRef = useRef<any>(null)
-    const ReviewsRef = useRef<any>(null)
+    const IntroRef = useRef<any>(null);
+    const ContactsRef = useRef<any>(null);
+    const ServicesRef = useRef<any>(null);
+    const PortfolioRef = useRef<any>(null);
+    const InformationRef = useRef<any>(null);
+    const ReviewsRef = useRef<any>(null);
 
-    const IntroScroll = () => IntroRef.current.scrollIntoView({block:'start'})
-    const ContactsScroll = () => ContactsRef.current.scrollIntoView(true)
-    const ServicesScroll = () => ServicesRef.current.scrollIntoView(true)
-    const PortfolioScroll = () => PortfolioRef.current.scrollIntoView(true)
-    const InformationScroll = () => InformationRef.current.scrollIntoView(true)
-    const ReviewsScroll = () => ReviewsRef.current.scrollIntoView(true)
+    const IntroScroll = () => IntroRef.current.scrollIntoView({ block: "start" });
+    const ContactsScroll = () => ContactsRef.current.scrollIntoView(true);
+    const ServicesScroll = () => ServicesRef.current.scrollIntoView(true);
+    const PortfolioScroll = () => PortfolioRef.current.scrollIntoView(true);
+    const InformationScroll = () => InformationRef.current.scrollIntoView(true);
+    const ReviewsScroll = () => ReviewsRef.current.scrollIntoView(true);
     return (
         <>
             <Header
@@ -37,21 +37,21 @@ const App = () => {
                 InformationScroll={InformationScroll}
                 ReviewsScroll={ReviewsScroll}
             />
-            <Space/>
-            <Intro refProp={IntroRef}/>
+            <Space />
+            <Intro refProp={IntroRef} />
             <Layout>
-                <Services refProp={ServicesRef}/>
-                <Object/>
-                <PortfolioMenu refProp={PortfolioRef}/>
-                <Reviews refProp={ReviewsRef}/>
-                <Information refProp={InformationRef}/>
-                <Action/>
-                <Contacts refProp={ContactsRef}/>
+                <Services refProp={ServicesRef} />
+                <Object />
+                <PortfolioMenu refProp={PortfolioRef} />
+                <Reviews refProp={ReviewsRef} />
+                <Information refProp={InformationRef} />
+                <Action />
+                <Contacts refProp={ContactsRef} />
             </Layout>
-            <Modals/>
-            <UINotification/>
+            <Modals />
+            <UINotification />
         </>
     );
-}
+};
 
 export default App;
