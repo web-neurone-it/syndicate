@@ -1,23 +1,29 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from "react";
 
 function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
     return {
         width,
-        height
+        height,
     };
 }
 
 export default function useWindowDimensions() {
-    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+    const isSSR = import.meta.env.SSR;
+    const [windowDimensions, setWindowDimensions] = useState(
+        isSSR ? { width: undefined, height: undefined } : getWindowDimensions()
+    );
 
-    useEffect(() => {
+    useLayoutEffect(() => {
+        if (import.meta.env.SSR) return;
+
         function handleResize() {
             setWindowDimensions(getWindowDimensions());
         }
 
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
 
     return windowDimensions;

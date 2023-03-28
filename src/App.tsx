@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 import Layout from "./hoc/Layout/Layout";
 import Header from "./components/Header/Header";
 import Intro from "./components/Intro/Intro";
@@ -29,14 +29,16 @@ const App = () => {
     const ReviewsScroll = () => ReviewsRef.current.scrollIntoView(true);
     return (
         <>
-            <Header
-                IntroScroll={IntroScroll}
-                ContactsScroll={ContactsScroll}
-                ServicesScroll={ServicesScroll}
-                PortfolioScroll={PortfolioScroll}
-                InformationScroll={InformationScroll}
-                ReviewsScroll={ReviewsScroll}
-            />
+            <Suspense fallback={"..."}>
+                <Header
+                    IntroScroll={IntroScroll}
+                    ContactsScroll={ContactsScroll}
+                    ServicesScroll={ServicesScroll}
+                    PortfolioScroll={PortfolioScroll}
+                    InformationScroll={InformationScroll}
+                    ReviewsScroll={ReviewsScroll}
+                />
+            </Suspense>
             <Space />
             <Intro refProp={IntroRef} />
             <Layout>

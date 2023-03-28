@@ -2,8 +2,11 @@
 .vscode/
 node_modules/
 build/
+dist/
 .DS_Store
 *.tgz
+.yarn/
+.yarnrc.yml
 my-app*
 template/src/__tests__/__snapshots__/
 lerna-debug.log

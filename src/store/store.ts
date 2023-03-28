@@ -1,7 +1,7 @@
-import {combineReducers, configureStore} from "@reduxjs/toolkit";
-import reviewReducer from '../models/ReviewSlice'
-import offerReducer from '../models/OfferSlice'
-import serviceReducer from '../models/ServiceSlice'
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import reviewReducer from "../models/ReviewSlice";
+import offerReducer from "../models/OfferSlice";
+import serviceReducer from "../models/ServiceSlice";
 import basketReducer from "../models/BasketSlice";
 import modalReducer from "../models/ModalSlice";
 import basketModalReducer from "../models/ModalSlice";
@@ -12,16 +12,16 @@ const rootReducer = combineReducers({
     serviceReducer,
     basketReducer,
     modalReducer,
-    basketModalReducer
-})
+    basketModalReducer,
+});
 
-export const setupStore = () => {
+export const setupStore = (preloadedState?: RootState) => {
     return configureStore({
-        reducer: rootReducer
-    })
-}
+        reducer: rootReducer,
+        preloadedState,
+    });
+};
 
-export type RootState = ReturnType<typeof rootReducer>
-export type AppStore = ReturnType<typeof setupStore>
-export type AppDispatch = AppStore['dispatch']
-
+export type RootState = ReturnType<typeof rootReducer>;
+export type AppStore = ReturnType<typeof setupStore>;
+export type AppDispatch = AppStore["dispatch"];

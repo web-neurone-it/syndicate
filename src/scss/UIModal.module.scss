@@ -1,50 +1,50 @@
 @import "variables";
-.UIModal{
+.UIModal {
   background: rgba(0, 0, 0, 0.66);
   height: 100vh;
   width: 100vw;
   position: fixed;
-  top:0;
+  top: 0;
   left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 99999;
-  &__container{
+  &__container {
     background: #171717;
     padding: 10px 50px;
     border-radius: 20px;
     border: 3px solid white;
-    box-shadow: 1px 1px 50px #833AB4;
-    &.entering{
+    box-shadow: 1px 1px 50px #833ab4;
+    &.entering {
       animation: appearing 500ms ease-in-out forwards;
     }
-    &.exiting{
+    &.exiting {
       animation: appearing 500ms ease-in-out alternate-reverse;
     }
-    &-cross{
+    &-cross {
       position: absolute;
       cursor: pointer;
       margin: -30px 0 0 300px;
       font-size: $f-primary;
     }
-    &-cross:hover{
-      svg{
-        fill: #7F7F7F;
+    &-cross:hover {
+      svg {
+        fill: #7f7f7f;
       }
     }
-    &-title{
+    &-title {
       text-align: center;
       font-size: $f-primary;
       font-weight: $fw-middle;
       margin-bottom: 20px;
     }
-    &-fieldName{
+    &-fieldName {
       font-size: $f-min;
     }
-    &-service{
+    &-service {
       cursor: pointer;
-      &-selected{
+      &-selected {
         font-size: 22px;
         border: 2px solid $gray;
         border-radius: 5px;
@@ -55,23 +55,23 @@
         align-items: center;
         margin-bottom: 20px;
       }
-      &-selected.error{
+      &-selected.error {
         box-shadow: 0 0 5px red;
       }
-      &-options{
+      &-options {
         margin: 20px 0;
         border: 2px solid $gray;
         border-radius: 5px;
-        & > *:hover{
+        & > *:hover {
           background: $darkgray;
           border-radius: 5px;
         }
       }
-      &-options.disabled{
+      &-options.disabled {
         display: none;
       }
     }
-    &-button{
+    &-button {
       display: flex;
       justify-content: center;
       margin-bottom: 10px;
@@ -80,15 +80,15 @@
 }
 
 @keyframes appearing {
-  0%{
+  0% {
     opacity: 0;
     transform: scale(0);
   }
-  50%{
+  50% {
     opacity: 1;
     transform: scale(1.1);
   }
-  100%{
+  100% {
     transform: scale(1);
   }
 }

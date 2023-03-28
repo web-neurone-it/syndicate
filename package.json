@@ -21,7 +21,9 @@
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.3",
     "@types/react-input-mask": "^3.0.1",
+    "@types/serialize-javascript": "^5.0.2",
     "axios": "^0.27.2",
+    "compression": "^1.7.4",
     "disable-scroll": "^0.6.0",
     "dotenv": "^16.0.1",
     "emailjs": "^4.0.0",
@@ -38,6 +40,8 @@
     "react-transition-group": "^4.4.2",
     "react-yandex-maps": "^4.6.0",
     "sass": "^1.52.3",
+    "serialize-javascript": "^6.0.1",
+    "serve-static": "^1.15.0",
     "spring": "^0.0.0",
     "swiper": "^8.2.2",
     "three": "^0.139.2",
@@ -46,9 +50,11 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "ssr-start": "node server",
+    "build:client": "vite build --outDir dist/client",
+    "build:server": "vite build --outDir dist/server --ssr src/entry-server.tsx",
+    "build": "concurrently \"npm:build:*\"",
+    "preview": "NODE_ENV=production node server"
   },
   "eslintConfig": {
     "extends": [
@@ -69,11 +75,16 @@
     ]
   },
   "devDependencies": {
+    "@digitak/esrun": "^3.2.21",
+    "@types/compression": "^1",
     "@types/express": "^4",
+    "@types/serve-static": "^1",
     "@types/three": "^0.139.0",
     "@vitejs/plugin-react": "^3.1.0",
     "concurrently": "^7.6.0",
     "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
     "vite": "^4.2.1"
-  }
+  },
+  "type": "module"
 }

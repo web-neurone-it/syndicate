@@ -1,49 +1,49 @@
 @import "variables";
-.Header{
+.Header {
   position: fixed;
   width: 100%;
   padding: 5px 60px;
   font-size: $f-primary;
   background: $darkgray;
   z-index: 99999;
-  box-shadow: 5px 10px 10px  $darkgray;
-  &__links{
+  box-shadow: 5px 10px 10px $darkgray;
+  &__links {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid $gray;
-    &-intro{
+    &-intro {
       display: flex;
       align-items: center;
       gap: 20px;
-      &-logo{
+      &-logo {
         display: flex;
         align-items: center;
         gap: 20px;
         margin-bottom: 10px;
       }
-      &-links{
+      &-links {
         margin-left: 60px;
         display: flex;
         gap: 20px;
       }
     }
-    &-phones{
+    &-phones {
       display: flex;
       align-items: center;
       gap: 60px;
-      & > *:first-child{
+      & > *:first-child {
         white-space: nowrap;
       }
     }
   }
-  &__nav{
+  &__nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    &-container{
+    &-container {
       font-weight: $fw-middle;
-      text-transform: uppercase ;
+      text-transform: uppercase;
       display: flex;
       gap: 30px;
       padding: 10px;
@@ -52,85 +52,87 @@
 }
 
 @media (max-width: 1650px) {
-  .Header{
+  .Header {
     padding: 5px calc(5px + (60 - 5) * ((100vw - 320px) / (1650 - 320)));
-    font-size: calc(10px + (22 - 10) * ((100vw - 320px) / (1650 - 320))) !important;
-    &__nav-container{
+    font-size: calc(
+      10px + (22 - 10) * ((100vw - 320px) / (1650 - 320))
+    ) !important;
+    &__nav-container {
       gap: calc(5px + (30 - 5) * ((100vw - 320px) / (1650 - 320)));
       //gap: 0;
     }
   }
 }
 @media (max-width: 1120px) {
-  .Header{
-    &__links{
-      &-intro{
+  .Header {
+    &__links {
+      &-intro {
         font-size: $f-middle;
-        &-logo{
-          img:nth-child(2){
+        &-logo {
+          img:nth-child(2) {
             display: none;
           }
         }
       }
     }
-    &__nav{
+    &__nav {
       justify-content: center;
-      &-address{
+      &-address {
         display: none;
       }
     }
   }
 }
 @media (max-width: 810px) {
-  .Header{
-    &__links{
-      &-intro{
+  .Header {
+    &__links {
+      &-intro {
         font-size: $f-min;
-        &-logo{
-          img:nth-child(2){
+        &-logo {
+          img:nth-child(2) {
             display: none;
           }
         }
-        &-links{
+        &-links {
           margin-left: calc(5px + (30 - 5) * ((100vw - 320px) / (1650 - 320)));
-          gap:  calc(5px + (20 - 5) * ((100vw - 320px) / (1650 - 320)));
+          gap: calc(5px + (20 - 5) * ((100vw - 320px) / (1650 - 320)));
         }
       }
-      &-phones{
+      &-phones {
         gap: calc(5px + (60 - 5) * ((100vw - 320px) / (1650 - 320)));
       }
     }
-    &__nav{
+    &__nav {
       justify-content: center;
-      &-container{
+      &-container {
         padding: calc(2px + (10 - 2) * ((100vw - 320px) / (810 - 320)));
       }
     }
   }
 }
 @media (max-width: 670px) {
-  .Header{
+  .Header {
     line-height: 40px;
-    &__links{
-      &-intro{
+    &__links {
+      &-intro {
         margin-left: 0;
         font-size: calc(18px + (36 - 18) * ((100vw - 320px) / (670 - 320)));
-        &-logo{
-          img:nth-child(1){
+        &-logo {
+          img:nth-child(1) {
             display: none;
           }
         }
       }
-      &-phones{
-        & > *:first-child{
+      &-phones {
+        & > *:first-child {
           font-size: calc(18px + (14 - 18) * ((100vw - 320px) / (670 - 320)));
         }
-        & > *:last-child{
+        & > *:last-child {
           display: none;
         }
       }
     }
-    &__nav{
+    &__nav {
       width: 100vw;
       justify-content: center;
       background-color: $darkgray;
