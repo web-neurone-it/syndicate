@@ -1,15 +1,15 @@
-.Space{
+.Space {
   width: 100px;
   height: 145px;
 }
 
 @media (max-width: 1860px) {
-  .Space{
+  .Space {
     height: calc(67px + (145 - 67) * ((100vw - 320px) / (1650 - 320)));
   }
 }
 @media (max-width: 600px) {
-  .Space{
+  .Space {
     height: 0;
   }
 }

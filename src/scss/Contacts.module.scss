@@ -17,6 +17,10 @@
     &-credentials {
       display: flex;
       justify-content: space-between;
+      &-item {
+        display: flex;
+      }
+
       &-block {
         & > * {
           margin-bottom: 25px;

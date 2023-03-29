@@ -53,7 +53,8 @@ const Contacts = ({ refProp }: { refProp: React.Ref<any> }) => {
                         </div>
                         <div className={classes["Contacts__info-credentials-block"]}>
                             <p className={classes["title"]}>Напишите нам:</p>
-                            <p
+                            <article
+                                className={classes["Contacts__info-credentials-item"]}
                                 onClick={() =>
                                     open(
                                         "https://api.whatsapp.com/send?phone=79644444847&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20",
@@ -65,8 +66,9 @@ const Contacts = ({ refProp }: { refProp: React.Ref<any> }) => {
                                 <span>
                                     <UIText type={"primary"}>&nbsp;+7 (964) 444-48-47</UIText>
                                 </span>{" "}
-                            </p>
-                            <p
+                            </article>
+                            <article
+                                className={classes["Contacts__info-credentials-item"]}
                                 onClick={() => open("https://t.me/SyndicateDetailing", "_self")}
                             >
                                 <FaTelegram />
@@ -74,7 +76,7 @@ const Contacts = ({ refProp }: { refProp: React.Ref<any> }) => {
                                     {" "}
                                     <UIText type={"primary"}>&nbsp;+7 (964) 444-48-47</UIText>
                                 </span>
-                            </p>
+                            </article>
                         </div>
                         <div className={classes["Contacts__info-credentials-block"]}>
                             <p className={classes["title"]}>График работы:</p>
