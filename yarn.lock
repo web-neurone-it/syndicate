@@ -2096,26 +2096,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@digitak/esrun@npm:^3.2.21":
-  version: 3.2.21
-  resolution: "@digitak/esrun@npm:3.2.21"
-  dependencies:
-    "@digitak/grubber": "npm:^3.1.4"
-    chokidar: "npm:^3.5.1"
-    esbuild: "npm:^0.17.4"
-  bin:
-    esrun: bin.js
-  checksum: dfb7bdb5a3e9f8f3f30c8134e96d4f312b31a704a35e5154ea2a3d20d70ea89e18fe71cfc7b414a77879602015bba796aef8e038cee0efcea53f07e6664b8cd6
-  languageName: node
-  linkType: hard
-
-"@digitak/grubber@npm:^3.1.4":
-  version: 3.1.4
-  resolution: "@digitak/grubber@npm:3.1.4"
-  checksum: b70339900de59389a4e5863bae00510b012b9d67591c16a9058b556035d6a53fec65717d984840e6382657876c06f1611ee4b1980c488d45eb3225c1f07f2356
-  languageName: node
-  linkType: hard
-
 "@emailjs/browser@npm:^3.6.2":
   version: 3.6.2
   resolution: "@emailjs/browser@npm:3.6.2"
@@ -5730,9 +5710,9 @@ __metadata:
   linkType: hard
 
 "caniuse-lite@npm:^1.0.30001449":
-  version: 1.0.30001470
-  resolution: "caniuse-lite@npm:1.0.30001470"
-  checksum: 997403fb6db7c2890987df9a976e03b297f52e5b2d0057935d4356af6b12a05c6deadc00c52e9a368a8af51bb22d57adfda9239bf6f95712db6b38d922e339dc
+  version: 1.0.30001472
+  resolution: "caniuse-lite@npm:1.0.30001472"
+  checksum: ea88dd491d75d797cf083a24f18ef273ee47374ad92cc69c0a84a52ba54ff7f1838be72a3fb07c8c5288408a18d10646eb257fbd3505778e4c219e92efb52524
   languageName: node
   linkType: hard
 
@@ -5816,7 +5796,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:>=3.0.0 <4.0.0, chokidar@npm:^3.4.2, chokidar@npm:^3.5.1, chokidar@npm:^3.5.2, chokidar@npm:^3.5.3":
+"chokidar@npm:>=3.0.0 <4.0.0, chokidar@npm:^3.4.2, chokidar@npm:^3.5.2, chokidar@npm:^3.5.3":
   version: 3.5.3
   resolution: "chokidar@npm:3.5.3"
   dependencies:
@@ -7032,9 +7012,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.284":
-  version: 1.4.340
-  resolution: "electron-to-chromium@npm:1.4.340"
-  checksum: bad111b3637ff001b1bb84af10433fc422525b8bca4b6720107ea61b888f3b6178ed893c406a3384851a8e124976445bcdaecedfb15038e1feb6bc1bdb3b7311
+  version: 1.4.342
+  resolution: "electron-to-chromium@npm:1.4.342"
+  checksum: 62253d35e4d80bb9ad9851f2d6aff34897a50692dbbb931c6a636cebb188cf761768b7278414a3275020cfb963b369d8908fafc71ddea95767bd8bf72508993e
   languageName: node
   linkType: hard
 
@@ -7215,7 +7195,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:^0.17.4, esbuild@npm:^0.17.5":
+"esbuild@npm:^0.17.5":
   version: 0.17.14
   resolution: "esbuild@npm:0.17.14"
   dependencies:
@@ -12544,14 +12524,14 @@ __metadata:
   linkType: hard
 
 "react-dom@npm:^18.1.0":
-  version: 18.2.0
-  resolution: "react-dom@npm:18.2.0"
+  version: 18.1.0
+  resolution: "react-dom@npm:18.1.0"
   dependencies:
     loose-envify: "npm:^1.1.0"
-    scheduler: "npm:^0.23.0"
+    scheduler: "npm:^0.22.0"
   peerDependencies:
-    react: ^18.2.0
-  checksum: 7c5b915fb793d63563cec1f721e059e6ff0e2855ac116ab5cb7450b6c59398f5e25f95c960ce5cb93504cc58ab724a75a78e99282354e702a0e667d0d787d028
+    react: ^18.1.0
+  checksum: b8fdbb33e5462064e8a923b58ba529490c25f8680e040acc18b295f200fa2179ba01e1c94779a84c1c2a1d87339057bf716b061e53bd76db25dbd5c5e5d2755e
   languageName: node
   linkType: hard
 
@@ -12810,11 +12790,11 @@ __metadata:
   linkType: hard
 
 "react@npm:^18.1.0":
-  version: 18.2.0
-  resolution: "react@npm:18.2.0"
+  version: 18.1.0
+  resolution: "react@npm:18.1.0"
   dependencies:
     loose-envify: "npm:^1.1.0"
-  checksum: 8434e5782c52b3bf18a80b666348977924ee3827895fa03ec3ffb9faca90c460049f14130428dd1546bab6cf3b2c277f2c243d3c2a856501331d2e69c24b2bb9
+  checksum: 2ec5d96c4af7aaf531f92a61167ce433d2095bf041586b8eec4e2474ed7320b3977c762e46a778236de857619709e2547a9c3bb189b2d59faff4cf4968ad142a
   languageName: node
   linkType: hard
 
@@ -13396,12 +13376,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"scheduler@npm:^0.23.0":
-  version: 0.23.0
-  resolution: "scheduler@npm:0.23.0"
+"scheduler@npm:^0.22.0":
+  version: 0.22.0
+  resolution: "scheduler@npm:0.22.0"
   dependencies:
     loose-envify: "npm:^1.1.0"
-  checksum: f4022b95cdc282668643da4850f55fe70c899aa956d11819f196e2ca892271bdb253613e53997852094f9351f7c72d057eea8b28d9b4bcb93bcb1c6d09985c82
+  checksum: de5e75075cf8de38e0dc0e04f834a4ac67e75481b72cacd56f57aff26bc4e4db46cc8388f646b25a39d32dde97780a13cc63f4e4727d61a496d49c639c8e527c
   languageName: node
   linkType: hard
 
@@ -14232,7 +14212,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "syndicate@workspace:."
   dependencies:
-    "@digitak/esrun": "npm:^3.2.21"
     "@emailjs/browser": "npm:^3.6.2"
     "@emotion/react": "npm:^11.9.0"
     "@emotion/server": "npm:^11.10.0"
