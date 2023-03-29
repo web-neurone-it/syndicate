@@ -1,7 +1,8 @@
 import App from "./App";
 import { RootState, setupStore } from "./store/store";
 import { Provider } from "react-redux";
-import { hydrateRoot } from "react-dom/client";
+// import { createRoot, hydrateRoot } from "react-dom/client";
+import { hydrate } from "react-dom";
 
 declare global {
   interface Window {
@@ -19,5 +20,7 @@ const reactNode = () => (
     <App />
   </Provider>
 );
+// const root = createRoot(domNode);
+hydrate(reactNode(), domNode, () => null);
 
-hydrateRoot(domNode, reactNode());
+// hydrateRoot(domNode, reactNode());
