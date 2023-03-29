@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "../../scss/Header.module.scss";
 import logo from "../../assets/Logo/logo.webp";
 import name from "../../assets/Logo/logoName.webp";
@@ -73,23 +72,49 @@ const Header = (props: IHeader) => {
             </div>
 
             <div className={classes["Header__nav"]}>
-                {
-                    // width > 670 ?
-                    //     <div className={classes['Header__nav-container']}>
-                    //         <UIText type={'solid'} onClick={props.IntroScroll}> <a>Главная</a></UIText>
-                    //         <UIText type={'primary'} onClick={props.ServicesScroll}> <a>Услуги</a></UIText>
-                    //         <UIText type={'primary'} onClick={props.PortfolioScroll}> <a>Портфолио</a></UIText>
-                    //         <UIText type={'primary'} onClick={props.InformationScroll}> <a>О нас</a></UIText>
-                    //         <UIText type={'primary'} onClick={props.ReviewsScroll}> <a>Отзывы</a></UIText>
-                    //         <UIText type={'primary'} onClick={props.ContactsScroll}> <a>Контакты</a></UIText>
-                    //     </div>
-                    //     :
-                    //     <div className={classes['Header__nav-container']}>
-                    //         <UIText type={'solid'} onClick={props.IntroScroll}> <a>Главная</a></UIText>
-                    //         <UIText type={'primary'} onClick={props.ServicesScroll}> <a>Услуги</a></UIText>
-                    //         <UIText type={'primary'} onClick={props.ContactsScroll}> <a>Контакты</a></UIText>
-                    //     </div>
-                }
+                {width > 670 ? (
+                    <div className={classes["Header__nav-container"]}>
+                        <UIText type={"solid"} onClick={props.IntroScroll}>
+                            {" "}
+                            <a>Главная</a>
+                        </UIText>
+                        <UIText type={"primary"} onClick={props.ServicesScroll}>
+                            {" "}
+                            <a>Услуги</a>
+                        </UIText>
+                        <UIText type={"primary"} onClick={props.PortfolioScroll}>
+                            {" "}
+                            <a>Портфолио</a>
+                        </UIText>
+                        <UIText type={"primary"} onClick={props.InformationScroll}>
+                            {" "}
+                            <a>О нас</a>
+                        </UIText>
+                        <UIText type={"primary"} onClick={props.ReviewsScroll}>
+                            {" "}
+                            <a>Отзывы</a>
+                        </UIText>
+                        <UIText type={"primary"} onClick={props.ContactsScroll}>
+                            {" "}
+                            <a>Контакты</a>
+                        </UIText>
+                    </div>
+                ) : (
+                    <div className={classes["Header__nav-container"]}>
+                        <UIText type={"solid"} onClick={props.IntroScroll}>
+                            {" "}
+                            <a>Главная</a>
+                        </UIText>
+                        <UIText type={"primary"} onClick={props.ServicesScroll}>
+                            {" "}
+                            <a>Услуги</a>
+                        </UIText>
+                        <UIText type={"primary"} onClick={props.ContactsScroll}>
+                            {" "}
+                            <a>Контакты</a>
+                        </UIText>
+                    </div>
+                )}
 
                 <div className={classes["Header__nav-address"]}>
                     <UIText type={"primary"}>

@@ -8,12 +8,10 @@ import Jeep from "../../objects/Jeep";
 import classes from "../../scss/Object.module.scss";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { selectCar, basketAppend } from "../../store/reducers/ActionCreators";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
 import UIButton from "../../UIKit/UIButton";
 import { FaPlus } from "react-icons/fa";
 
 const Object = () => {
-  const { width } = useWindowDimensions(); //viewport width
   const [current, setCurrent] = useState<number>(0);
   const dispatch = useAppDispatch();
 
@@ -28,7 +26,10 @@ const Object = () => {
     <>
       <div className={classes["Object"]}>
         <div className={classes["Object__selected"]}>
-          <div className={classes["Object__selected-title"]}> <br/> Выбрано:</div>
+          <div className={classes["Object__selected-title"]}>
+            {" "}
+            <br /> Выбрано:
+          </div>
           <div className={classes["Object__selected-item"]}>
             Тип кузова: <div> {selectedCar} </div>
           </div>
@@ -44,27 +45,15 @@ const Object = () => {
             </UIButton>
           </div>
           <div className={classes["Object__selected-item-hint"]}>
-            {width > 630 ? (
-              <span>
-                <br/>
-                <b>Соберите ваш пакет услуг:</b> <br /> <br />
-                1. Выберите услугу из дерева услуг.
-                <br />
-                2. Выберите ваш тип кузова. <br />
-                3. Вращайте 3D модель автомобиля, двойным кликом выберите нужную
-                часть/части авто.
-              </span>
-            ) : (
-              <span>
-                <br/>
-                <b>Соберите ваш пакет услуг:</b> <br /> <br />
-                1. Выберите услугу из дерева услуг.
-                <br />
-                2. Выберите ваш тип кузова. <br />
-                3. Вращайте 3D модель автомобиля свайпом, кликом выберите нужную
-                часть/части авто.
-              </span>
-            )}
+            <span>
+              <br />
+              <b>Соберите ваш пакет услуг:</b> <br /> <br />
+              1. Выберите услугу из дерева услуг.
+              <br />
+              2. Выберите ваш тип кузова. <br />
+              3. Вращайте 3D модель автомобиля, двойным кликом выберите нужную
+              часть/части авто.
+            </span>
           </div>
         </div>
         <div className={classes["Object__item"]}>
@@ -72,7 +61,6 @@ const Object = () => {
             shadows
             dpr={[1, 2]}
             camera={{ position: [5, 50, 30], fov: 3 }}
-
           >
             <ambientLight intensity={0.3} />
             <spotLight

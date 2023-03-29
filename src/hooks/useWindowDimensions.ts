@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 
 function getWindowDimensions() {
     const { innerWidth: width, innerHeight: height } = window;
@@ -9,14 +9,12 @@ function getWindowDimensions() {
 }
 
 export default function useWindowDimensions() {
-    const isSSR = import.meta.env.SSR;
-    const [windowDimensions, setWindowDimensions] = useState(
-        isSSR ? { width: undefined, height: undefined } : getWindowDimensions()
-    );
+    const [windowDimensions, setWindowDimensions] = useState({
+        width: 0,
+        height: 0,
+    });
 
-    useLayoutEffect(() => {
-        if (import.meta.env.SSR) return;
-
+    useEffect(() => {
         function handleResize() {
             setWindowDimensions(getWindowDimensions());
         }

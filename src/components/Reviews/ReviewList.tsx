@@ -1,4 +1,3 @@
-import React from "react";
 import { useAppSelector } from "../../hooks/redux";
 import classes from "../../scss/Reviews.module.scss";
 import starFull from "../../assets/Static/starFull.svg";

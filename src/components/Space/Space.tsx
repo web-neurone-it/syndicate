@@ -1,8 +1,7 @@
-import React from 'react';
-import classes from '../../scss/Space.module.scss'
+import classes from "../../scss/Space.module.scss";
 
 const Space = () => {
-    return <div className={classes['Space']}/>
+    return <div className={classes["Space"]}></div>;
 };
 
 export default Space;
