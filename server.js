@@ -39,14 +39,16 @@ async function createServer() {
 
       template = await vite.transformIndexHtml(url, template);
 
-      const modulePath =
-        process.env.NODE_ENV === "production"
-          ? "dist/server/entry-server.js"
-          : "src/entry-server.tsx";
+      let render;
 
-      const { render } = await vite.ssrLoadModule(modulePath);
-
-      const { html: appHtml, state } = await await render();
+      if (process.env.NODE_ENV === "production") {
+        render = (await vite.ssrLoadModule("./dist/server/entry-server.js"))
+          .render;
+      } else {
+        render = (await vite.ssrLoadModule("src/entry-server.tsx")).render;
+      }
+      console.log(render);
+      const { html: appHtml, state } = await render();
 
       let html = template.replace("<!--ssr-->", appHtml);
       const serializedState = serializeJavascript(state);
