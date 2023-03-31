@@ -11,14 +11,19 @@ const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 async function createServer() {
   const app = express();
+  const prod = process.env.NODE_ENV === "production";
 
-  const vite = await createViteServer({
-    server: { middlewareMode: true },
-    appType: "custom",
-  });
+  let vite;
+  if (!prod) {
+    vite = await createViteServer({
+      server: { middlewareMode: true },
+      appType: "custom",
+    });
 
-  app.use(vite.middlewares);
-  if (process.env.NODE_ENV === "production") {
+    app.use(vite.middlewares);
+  }
+
+  if (prod) {
     app.use((await import("compression")).default());
     app.use(
       (await import("serve-static")).default(resolve("dist/client"), {
@@ -31,23 +36,20 @@ async function createServer() {
     const url = req.originalUrl;
 
     try {
-      const indexPath =
-        process.env.NODE_ENV === "production"
-          ? "dist/client/index.html"
-          : "index.html";
+      const indexPath = prod ? "dist/client/index.html" : "index.html";
       let template = fs.readFileSync(path.resolve(dirname, indexPath), "utf-8");
 
-      template = await vite.transformIndexHtml(url, template);
+      if (!prod) {
+        template = await vite.transformIndexHtml(url, template);
+      }
 
       let render;
 
-      if (process.env.NODE_ENV === "production") {
-        render = (await vite.ssrLoadModule("./dist/server/entry-server.js"))
-          .render;
+      if (prod) {
+        render = (await import("./dist/server/entry-server.cjs")).render;
       } else {
         render = (await vite.ssrLoadModule("src/entry-server.tsx")).render;
       }
-      console.log(render);
       const { html: appHtml, state } = await render();
 
       let html = template.replace("<!--ssr-->", appHtml);
@@ -59,13 +61,15 @@ async function createServer() {
 
       res.status(200).end(html);
     } catch (e) {
-      vite.ssrFixStacktrace(e);
+      if (!prod) {
+        vite.ssrFixStacktrace(e);
+      }
       next(e);
     }
   });
 
   app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`);
+    console.log(`Server is listening on http://localhost:${PORT}`);
   });
 }
 
