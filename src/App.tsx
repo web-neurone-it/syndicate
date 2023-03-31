@@ -12,6 +12,7 @@ import Action from "./components/Action/Action";
 import Modals from "./components/Modals/Modals";
 import UINotification from "./UIKit/UINotification";
 import Object from "./components/Object/Object";
+import { Client, HydrationProvider } from "react-hydration-provider";
 
 const App = () => {
     const IntroRef = useRef<any>(null);
@@ -28,7 +29,7 @@ const App = () => {
     const InformationScroll = () => InformationRef.current.scrollIntoView(true);
     const ReviewsScroll = () => ReviewsRef.current.scrollIntoView(true);
     return (
-        <>
+        <HydrationProvider>
             <Header
                 IntroScroll={IntroScroll}
                 ContactsScroll={ContactsScroll}
@@ -39,7 +40,9 @@ const App = () => {
             />
             <Space />
 
-            <Intro refProp={IntroRef} />
+            <Client>
+                <Intro refProp={IntroRef} />
+            </Client>
 
             <Layout>
                 <Services refProp={ServicesRef} />
@@ -54,7 +57,7 @@ const App = () => {
             </Layout>
             <Modals />
             <UINotification />
-        </>
+        </HydrationProvider>
     );
 };
 
