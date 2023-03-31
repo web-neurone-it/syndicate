@@ -40,9 +40,7 @@ const App = () => {
             />
             <Space />
 
-            <Client>
-                <Intro refProp={IntroRef} />
-            </Client>
+            <Intro refProp={IntroRef} />
 
             <Layout>
                 <Services refProp={ServicesRef} />

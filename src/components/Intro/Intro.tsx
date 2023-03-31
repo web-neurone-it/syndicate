@@ -19,7 +19,7 @@ const Intro = ({ refProp }: { refProp: React.Ref<any> }) => {
             style={{ backgroundImage: `url("${introBack}")` }}
         >
             <div className={classes["Intro__text"]}>
-                {width > 632 ? (
+                {!width || width > 632 ? (
                     <p className={classes["Intro__text-header"]}>
                         Преображаем <br /> и защищаем <br /> автомобили
                     </p>
