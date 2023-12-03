@@ -1,0 +1,36 @@
+@import 'variables';
+.Input{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  input{
+    color: $gray;
+    background-color: black;
+    outline: none;
+    text-indent: 10px;
+    border-radius: 100px;
+    font-size: $f-primary;
+    border: double 3px transparent;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    background-image: linear-gradient(black, black), radial-gradient(circle at top left, $gray,$gray);
+    &:hover{
+      background-image: linear-gradient(black, black),
+      radial-gradient(circle at top left, rgba(131, 58, 180, 0.8), rgba(253, 29, 29, 0.8)) !important;
+    }
+    &:focus{
+      background-image: linear-gradient(black, black),
+      radial-gradient(circle at top left, #833AB4,#FD1D1D) !important;
+    }
+  }
+  &__error{
+    color: #fd5252;
+    svg{
+      fill: #fd5252;
+    }
+  }
+}
+.error{
+  background-image: linear-gradient(black, black),
+  radial-gradient(circle at top left, #fd5252, #fd5252) !important;
+}

@@ -1,0 +1,36 @@
+@import "variables";
+.UINotification{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 99999;
+  padding: 0 0 10px 10px;
+  &__content{
+    font-weight: $fw-middle;
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 1px solid white;
+    box-shadow: 1px 1px 10px #833AB4;
+    background: rgba(49, 7, 75, 0.84);
+    display: flex;
+  }
+  &.entering{
+    animation: appearing 200ms ease-in-out forwards;
+  }
+  &.exiting{
+    animation: appearing 200ms ease-in-out alternate-reverse;
+  }
+}
+@keyframes appearing {
+  0%{
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  50%{
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}

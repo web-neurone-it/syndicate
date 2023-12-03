@@ -1,0 +1,17 @@
+@import "variables";
+.input{
+  font-size: 22px;
+  outline: none !important;
+  border: 2px solid $gray;
+  border-radius: 5px;
+  width: 230px;
+  text-indent: 10px;
+  margin-bottom: 20px;
+  &:focus, :active{
+    outline: none !important;
+  }
+  background: rgba(37, 37, 37, 0);
+}
+.error{
+  box-shadow: 0 0 5px red;
+}

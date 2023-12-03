@@ -1,0 +1,134 @@
+@import "variables";
+.Services{
+  &__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title{
+    font-size: $f-middle;
+    font-weight: $fw-middle;
+    margin-bottom: 40px;
+  }
+  &__tree{
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    ::-webkit-scrollbar {
+      width: 0;  /* Remove scrollbar space */
+      background: transparent;  /* Optional: just make scrollbar invisible */
+    }
+    :global {
+      .css-1g86id8-MuiTreeItem-content .MuiTreeItem-label{
+        font-size: $f-min !important;
+        font-weight: $fw-huge;
+        font-family: inherit;
+        width: fit-content;
+        &:hover{
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text !important;
+          background: white;
+          background: $gradient;
+        }
+      }
+      .Mui-selected{
+        background: $gradient;
+        border-radius: 12px;
+        &:hover{
+          background: white;
+        }
+      }
+    }
+  }
+  /** Service_Card**/
+  &__card{
+    background-color: $darkgray;
+    border-radius: 12px;
+    width: 800px;
+    height: fit-content;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &-categories{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & > div{
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text !important;
+        background: $gradient;
+        width: fit-content;
+      }
+      &-title{
+        font-size: $f-middle;
+        font-weight: $fw-huge;
+      }
+      &-subtitle{
+        font-size: $f-primary;
+      }
+    }
+    &-price{
+      text-align: center;
+    }
+    &-description{
+      color: $gray;
+    }
+    &-image{
+      text-align: center;
+    }
+  }
+}
+.entering{
+  animation: appearing .5s linear;
+}
+.exiting{
+  animation: appearing .5s linear reverse;
+}
+
+@keyframes appearing {
+  0%{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 1380px) {
+  .Services{
+    &__card{
+      width: calc(100px + (800 - 100) * ((100vw - 320px) / (1380 - 320)));
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .Services{
+    &__title{
+      font-size: calc(17px + (36 - 17) * ((100vw - 320px) / (1200 - 320)));
+      margin-bottom: calc(10px + (40 - 10) * ((100vw - 320px) / (1200 - 320)));
+    }
+    &__content{
+      //display: block;
+      & > * {
+        margin: 20px auto;
+      }
+      & > div:last-child{
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+@media (max-width: 750px) {
+  .Services{
+    &__content{
+      display: block;
+    }
+    &__card{
+      width: calc(300px + (800 - 300) * ((100vw - 320px) / (750 - 320)));
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@import "variables";
+.Contacts {
+  &__info {
+    &-logo {
+      display: flex;
+      align-items: center;
+      //justify-content: center;
+      gap: 15px;
+      margin-bottom: 40px;
+      img:first-child {
+        width: 50px;
+      }
+      img:last-child {
+        height: 50px;
+      }
+    }
+    &-credentials {
+      display: flex;
+      justify-content: space-between;
+      &-item {
+        display: flex;
+      }
+
+      &-block {
+        & > * {
+          margin-bottom: 25px;
+          white-space: nowrap;
+        }
+        &-subheader {
+          color: $gray;
+          text-indent: 20px;
+        }
+        a {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+        margin-bottom: 20px;
+      }
+      &-block:nth-child(1) {
+        margin-bottom: 20px;
+      }
+      &-block:nth-child(2) {
+        p:not(.title) {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          font-size: 30px;
+          span {
+            font-size: 16px;
+          }
+        }
+        //p:not(.title):hover{
+        //  svg{
+        //    fill: $gray;
+        //  }
+        //}
+      }
+    }
+  }
+  .title {
+    font-size: $f-primary;
+    font-weight: $fw-middle;
+    margin-bottom: 20px;
+  }
+  &__map {
+    & > div {
+      width: 100% !important;
+      height: 600px !important;
+      margin-bottom: 30px;
+    }
+    :global {
+      .ymaps-2-1-79-copyright__wrap {
+        display: none !important;
+      }
+      .ymaps-2-1-79-map-copyrights-promo {
+        display: none !important;
+      }
+      [class*="ymaps-2"][class*="-ground-pane"] {
+        // filter: invert(100%);
+        // -ms-filter: invert(100%);
+        // -webkit-filter: invert(100%);
+        // -moz-filter: invert(100%);
+        // -o-filter: invert(100%);
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+  .Contacts {
+    &__info {
+      &-logo {
+        img:nth-child(1) {
+          width: calc(40px + (50 - 40) * ((100vw - 320px) / (800 - 320)));
+        }
+        img:nth-child(2) {
+          height: calc(40px + (50 - 40) * ((100vw - 320px) / (800 - 320)));
+        }
+      }
+      &-credentials {
+        flex-direction: column;
+        align-items: center;
+        &-block:nth-child(2) {
+          p {
+            justify-content: unset;
+          }
+        }
+      }
+    }
+  }
+}

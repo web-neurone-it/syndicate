@@ -1,0 +1,73 @@
+@import "variables";
+.Intro{
+  padding: 180px 0 120px 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  &__text{
+    margin-left: 80px;
+    &-header{
+      background: $gradient;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text !important;
+      font-size: $f-huge;
+      font-weight: $fw-huge;
+      width: fit-content;
+    }
+    &-subheader{
+      line-height: 1.5em;
+      font-size: $f-middle;
+      margin-bottom: 10px;
+    }
+    &-ad{
+      line-height: 2em;
+      color: $gray;
+      font-size: $f-primary;
+    }
+    &-button > div{
+      font-size: $f-primary ;
+      line-height: $f-primary + 20px;
+    }
+    &-logo{
+      img{
+        width: 300px;
+      }
+      &-address{
+        margin: 10px 0;
+        width: 300px;
+      }
+    }
+  }
+}
+@media (max-width: 1860px) {
+  .Intro{
+    padding:
+            calc(0px + (180 - 0) * ((100vw - 320px) / (1650 - 320))) 0
+            calc(0px + (100 - 0) * ((100vw - 320px) / (1650 - 320))) 0;
+    &__text{
+      margin-left: calc(20px + (80 - 20) * ((100vw - 320px) / (1650 - 320)));
+      &-header{
+        font-size: calc(24px + (92 - 24) * ((100vw - 320px) / (1650 - 320)));
+      }
+      &-subheader{
+        font-size: calc(18px + (36 - 18) * ((100vw - 320px) / (1650 - 320)));
+      }
+      &-ad{
+        font-size: calc(10px + (22 - 10) * ((100vw - 320px) / (1650 - 320)));
+      }
+      &-button{
+        & > * {
+          font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1650 - 320))) !important;
+          line-height: calc(27px + (42 - 27) * ((100vw - 320px) / (1650 - 320))) !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .Intro{
+    padding:
+            calc(60px + (180 - 60) * ((100vw - 320px) / (1650 - 320))) 0
+            calc(0px + (100 - 0) * ((100vw - 320px) / (1650 - 320))) 0;
+  }
+}
+

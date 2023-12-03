@@ -1,0 +1,47 @@
+@import 'variables';
+.Action{
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  &__header{
+    font-size: $f-middle + 20px;
+    font-weight: $fw-middle;
+    width: fit-content;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text !important;
+    background: $gradient;
+  }
+  &__subheader{
+    font-size: $f-middle;
+    font-weight: $fw-primary;
+  }
+  &__paragraph{
+    text-align: center;
+    max-width: 620px;
+  }
+  &__button{
+    margin: 0 auto;
+    & > * {
+      line-height: 60px;
+    }
+  }
+}
+@media (max-width: 1650px) {
+  .Action{
+    margin-top: 40px;
+    &__header{
+      font-size: calc(28px + (56 - 28) * ((100vw - 320px) / (1650 - 320))) ;
+    }
+    &__subheader{
+      font-size: calc(14px + (36 - 14) * ((100vw - 320px) / (1650 - 320))) ;
+    }
+    &__button{
+      & > * {
+        line-height: 40px;
+      }
+    }
+  }
+}

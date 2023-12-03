@@ -1,0 +1,23 @@
+@import "variables";
+.UISuccess{
+  font-weight: $fw-middle;
+  font-size: $f-primary;
+  text-align: center;
+  padding: 100px;
+}
+.entering{
+  animation: appearing .5s linear;
+}
+.exiting{
+  animation: appearing .5s linear reverse;
+}
+@keyframes appearing {
+  0%{
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}

@@ -1,0 +1,132 @@
+@import "variables";
+.Gallery{
+  margin: 10px 0;
+  position: relative;
+  &__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    &-item{
+      cursor: pointer;
+      flex: 1 0 21%;
+      transition: all .2s linear;
+      width: 235px;
+      height: 235px;
+      opacity: 1;
+      background-size: cover;
+      background-position: center;
+    }
+    &-item:hover{
+      transition: all .2s linear;
+      opacity: 0.5;
+    }
+  }
+  &__fullscreen{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.69);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    &-data{
+      height: 100%;
+      &-cross{
+        font-size: 30px;
+        position: absolute;
+        top: 2%;
+        right: 2%;
+        z-index: 999999;
+        cursor: pointer;
+        transition: all .2s linear;
+        &:hover{
+          font-size: 35px;
+        }
+      }
+      &-slider{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      img{
+        width: 99vw;
+        height: auto;
+      }
+      :global{
+        .swiper-slide-active{
+          width: fit-content;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      /** Gallery__fullscreen-data **/
+      &.entering{
+        animation: fullSize .2s linear forwards;
+      }
+      &.exiting{
+        animation: fullSize .2s linear alternate-reverse;
+      }
+    }
+  }
+  /** Gallery animation **/
+  &.entering{
+    animation: appearing 1s ease-in-out forwards;
+  }
+  &.exiting{
+    animation: appearing 1s ease-in-out alternate-reverse;
+  }
+}
+@keyframes appearing {
+  0%{
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  50%{
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fullSize {
+  0%{
+    opacity: 0;
+    transform: scale(0);
+  }
+  50%{
+    opacity: 1;
+    transform: scale(0.5);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+@media (max-width: 800px) {
+  .Gallery{
+    &__container{
+      &-item{
+        width: calc(50px + (235 - 50) * ((100vw - 320px) / (800 - 320)));
+        height: calc(50px + (235 - 50) * ((100vw - 320px) / (800 - 320)));
+      }
+    }
+  }
+}
+
+//@media (max-width: 1250px), (max-height: 500px) {
+//  .Gallery{
+//    &__fullscreen{
+//      &-data{
+//        img{
+//          margin-top: 0;
+//          width: auto;
+//          height: 99vh;
+//        }
+//      }
+//    }
+//  }
+//}

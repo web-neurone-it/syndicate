@@ -1,0 +1,10 @@
+@import 'variables';
+.Portfolio{
+  &__buttons{
+    display: flex;
+    font-size: $f-primary;
+    gap: 20px;
+    font-weight: $fw-middle;
+    margin-bottom: 40px;
+  }
+}

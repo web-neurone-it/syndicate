@@ -1,0 +1,88 @@
+@import "variables";
+.Information{
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  gap: 150px;
+  &__image{
+    img{
+      height: 650px;
+    }
+  }
+  &__description{
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    gap: 40px;
+    &-name{
+      img{
+        width: 600px;
+      }
+    }
+    &-info{
+      p{
+        font-size: $f-primary;
+        color: $gray;
+      }
+    }
+    &-details{
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      &-paragraph{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        & > p{
+          text-indent: 73px;
+          font-size: $f-primary;
+          font-weight: $fw-middle;
+        }
+        &-text{
+          display: flex;
+          gap: 20px;
+          font-size: $f-primary;
+          p{
+            color: $gray;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1650px) {
+  .Information{
+    gap: calc(20px + (150 - 20) * ((100vw - 320px) / (1650 - 320)));
+    justify-content: center;
+    &__image {
+      img {
+        height: calc(250px + (650 - 250) * ((100vw - 320px) / (1650 - 320)));
+      }
+    }
+    &__description{
+      &-name{
+        img{
+          width: calc(300px + (600 - 300) * ((100vw - 320px) / (1650 - 320)));
+        }
+      }
+      &-info{
+        p{
+          font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1650 - 320))) !important;
+        }
+      }
+      &-details{
+        &-paragraph{
+          p:first-child{
+            text-align: center;
+          }
+          &-text{
+            font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1650 - 320))) !important;
+          }
+        }
+      }
+    }
+  }
+}
+

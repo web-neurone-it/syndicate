@@ -1,0 +1,22 @@
+@import "variables";
+.UIText {
+  width: fit-content;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text !important;
+  cursor: pointer;
+  background: white;
+}
+.solid{
+  background: $gradient;
+
+  &:hover{
+    background: $reverse-gradient;
+  }
+}
+.primary{
+  background: white;
+  &:hover{
+    transition: all 1s ease-in-out;
+    background: $gradient;
+  }
+}

@@ -1,0 +1,40 @@
+@import 'variables';
+.UIButton{
+  line-height: $f-primary + 5px;
+  border-radius: 80px;
+  cursor: pointer;
+  border: double 3px transparent;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  width: fit-content;
+  svg{
+    margin: 0 5px 0 10px;
+    background: none;
+  }
+}
+.primary{
+  &:hover{
+    background-image: linear-gradient(#1D1D1D, #1D1D1D),
+    radial-gradient(circle at top left, #833AB4,#FD1D1D);
+  }
+}
+.outline{
+  background-image: linear-gradient(#1D1D1D, #1D1D1D),
+  radial-gradient(circle at top left, #833AB4,#FD1D1D);
+  &:hover{
+    background-image: $gradient,
+    radial-gradient(circle at top left, #833AB4,#FD1D1D);
+  }
+}
+.solid{
+  background-image: $gradient,
+  radial-gradient(circle at top left, #833AB4,#FD1D1D);
+  &:hover{
+    background-image: $reverse-gradient,
+    radial-gradient(circle at top left,#FD1D1D,#833AB4);
+  }
+}
+

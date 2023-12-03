@@ -1,0 +1,78 @@
+@import "variables";
+.CardStack{
+  &__slider{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    &-item{
+      height: 750px;
+      width: 600px;
+      background: $darkgray;
+      margin-bottom: 40px;
+      border-radius: 12px;
+      &-title{
+        text-align: center;
+        font-size: $f-primary;
+        padding: 30px 0;
+      }
+      &-date{
+        text-align: right;
+        line-height: $f-primary;
+        font-size: $f-min;
+        margin-right: 10px;
+      }
+      img{
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+      }
+    }
+    :global{
+      .swiper {
+      }
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 18px;
+      }
+    }
+  }
+  &.entering{
+    animation: appearing 1s ease-in-out forwards;
+  }
+  &.exiting{
+    animation: appearing 1s ease-in-out alternate-reverse;
+  }
+}
+@keyframes appearing {
+  0%{
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+  50%{
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+@media (max-width: 1500px) {
+  .CardStack{
+    &__slider{
+      &-item{
+        width: calc(400px + (600 - 400) * ((100vw - 320px) / (1500 - 320)));
+        height: calc(375px + (750 - 375) * ((100vw - 320px) / (1500 - 320)));
+        &-title{
+          font-size: calc(12px + (22 - 12) * ((100vw - 320px) / (1500 - 320)));
+          padding: calc(5px + (30 - 5) * ((100vw - 320px) / (1500 - 320))) 0;
+        }
+      }
+    }
+  }
+}

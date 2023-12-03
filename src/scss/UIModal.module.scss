@@ -1,0 +1,94 @@
+@import "variables";
+.UIModal {
+  background: rgba(0, 0, 0, 0.66);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  &__container {
+    background: #171717;
+    padding: 10px 50px;
+    border-radius: 20px;
+    border: 3px solid white;
+    box-shadow: 1px 1px 50px #833ab4;
+    &.entering {
+      animation: appearing 500ms ease-in-out forwards;
+    }
+    &.exiting {
+      animation: appearing 500ms ease-in-out alternate-reverse;
+    }
+    &-cross {
+      position: absolute;
+      cursor: pointer;
+      margin: -30px 0 0 300px;
+      font-size: $f-primary;
+    }
+    &-cross:hover {
+      svg {
+        fill: #7f7f7f;
+      }
+    }
+    &-title {
+      text-align: center;
+      font-size: $f-primary;
+      font-weight: $fw-middle;
+      margin-bottom: 20px;
+    }
+    &-fieldName {
+      font-size: $f-min;
+    }
+    &-service {
+      cursor: pointer;
+      &-selected {
+        font-size: 22px;
+        border: 2px solid $gray;
+        border-radius: 5px;
+        text-indent: 10px;
+        width: fit-content;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      &-selected.error {
+        box-shadow: 0 0 5px red;
+      }
+      &-options {
+        margin: 20px 0;
+        border: 2px solid $gray;
+        border-radius: 5px;
+        & > *:hover {
+          background: $darkgray;
+          border-radius: 5px;
+        }
+      }
+      &-options.disabled {
+        display: none;
+      }
+    }
+    &-button {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@keyframes appearing {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
